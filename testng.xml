@@ -1,0 +1,33 @@
+<suite name="E2E Automation Test Suite">
+
+    <test name="Smoke Tests">
+
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="tests.LoginTests"/>
+        </classes>
+
+    </test>
+
+    <test name="Regression Tests">
+
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="tests.LoginTests"/>
+            <class name="tests.CartTests"/>
+            <class name="tests.CheckoutTests"/>
+        </classes>
+
+    </test>
+
+</suite>
