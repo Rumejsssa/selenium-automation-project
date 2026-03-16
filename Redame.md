@@ -8,11 +8,25 @@ Java
 Selenium
 TestNG
 Maven
+Git/GitHub
 
 ## Prerequisites
 Java 8+
-Maven
+Maven 3.x
 Chrome
+IntelliJ IDEA
 
-## Running tests
-mvn test
+## Test Cases
+LoginTest
+valid Login Test
+Invalid Login Test
+Locked User Test
+CartTests
+Add Single Item Test
+Add Multiple Items Test
+Remove item Test
+Checkout Tests
+complete Checkout Test
+
+## Running Tests
+Using Msven
