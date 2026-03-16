@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeMethod
     public void setup() {
@@ -20,24 +20,6 @@ public class BaseTest {
         driver.get("https://www.saucedemo.com");
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    }
-
-    @AfterMethod
-    public void teardown() {
-
-        driver.quit();
-    }
-
-    public void login(String username, String password) {
-
-        driver.findElement(By.id("user-name")).sendKeys(username);
-        driver.findElement(By.id("password")).sendKeys(password);
-        driver.findElement(By.id("login-button")).click();
-    }
-
-    public void addToCart(String productId) {
-
-        driver.findElement(By.id(productId)).click();
     }
 
 }
