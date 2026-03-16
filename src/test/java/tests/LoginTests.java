@@ -1,8 +1,9 @@
 package tests;
 
 import base.BaseTest;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 
 public class LoginTests extends BaseTest {
 
@@ -27,7 +28,7 @@ public class LoginTests extends BaseTest {
 
     }
 
-    @Test(groups = "regression")
+    @Test
     public void testLockedUser() {
 
         login("locked_out_user","secret_sauce");

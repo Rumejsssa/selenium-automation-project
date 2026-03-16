@@ -1,10 +1,10 @@
 package base;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.openqa.selenium.By;
+import org.testng.annotations.AfterMethod;
 
 import java.time.Duration;
 
@@ -12,8 +12,10 @@ public class BaseTest {
 
     protected WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() {
+
+        System.out.println("SETUP IS RUNNING");
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -26,7 +28,9 @@ public class BaseTest {
     @AfterMethod
     public void teardown() {
 
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     public void login(String username, String password) {

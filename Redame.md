@@ -8,6 +8,7 @@ Java
 Selenium
 TestNG
 Maven
+Git
 
 ## Prerequisites
 Java 8+
