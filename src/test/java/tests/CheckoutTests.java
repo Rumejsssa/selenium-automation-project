@@ -4,13 +4,14 @@ import base.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.TestData;
 
 public class CheckoutTests extends BaseTest {
 
-    @Test
+    @Test(groups = "smoke")
     public void testCompleteCheckout(){
 
-        login("standard_user","secret_sauce");
+        login(TestData.STANDARD_USER, TestData.PASSWORD);
 
         addToCart("add-to-cart-sauce-labs-backpack");
 
@@ -29,13 +30,12 @@ public class CheckoutTests extends BaseTest {
                 driver.findElement(By.className("complete-header")).getText();
 
         Assert.assertEquals(message,"Thank you for your order!");
-
     }
 
-    @Test
+    @Test(groups = "regression")
     public void testCheckoutEmptyForm(){
 
-        login("standard_user","secret_sauce");
+        login(TestData.STANDARD_USER, TestData.PASSWORD);
 
         addToCart("add-to-cart-sauce-labs-backpack");
 
@@ -49,7 +49,7 @@ public class CheckoutTests extends BaseTest {
                 driver.findElement(By.cssSelector("h3[data-test='error']")).isDisplayed();
 
         Assert.assertTrue(error);
-
     }
+
 
 }

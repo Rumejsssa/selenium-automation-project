@@ -15,17 +15,15 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setup() {
 
-        System.out.println("SETUP IS RUNNING");
-
         driver = new ChromeDriver();
+
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         driver.get("https://www.saucedemo.com");
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void teardown() {
 
         if (driver != null) {
@@ -41,8 +39,6 @@ public class BaseTest {
     }
 
     public void addToCart(String productId) {
-
         driver.findElement(By.id(productId)).click();
     }
-
 }
